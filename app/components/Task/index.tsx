@@ -2,7 +2,7 @@ import React from 'react';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 import { styles } from './styles';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
 type Props = {
   name: string;
@@ -16,7 +16,7 @@ export const TaskItem = ({ name, checked, onCheck, onRemove }: Props) => {
     <View style={styles.container}>
       <BouncyCheckbox
         size={25}
-        fillColor='#31CF67'
+        fillColor='#4EA8DE'
         unfillColor='#FFFFFF'
         iconStyle={{ borderColor: '#000' }}
         innerIconStyle={{ borderWidth: 2 }}
@@ -25,7 +25,7 @@ export const TaskItem = ({ name, checked, onCheck, onRemove }: Props) => {
       />
       <Text style={styles.name}>{name}</Text>
       <TouchableOpacity style={styles.button} onPress={onRemove}>
-        <Text style={styles.buttonText}>-</Text>
+        <Image source={require('../../../assets/trash.png')} />
       </TouchableOpacity>
     </View>
   );
